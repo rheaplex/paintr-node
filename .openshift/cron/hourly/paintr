@@ -9,5 +9,5 @@ HOUR=$(date +%H)
 
 if (( HOUR >= 9 && HOUR <= 21 && HOUR % 2 )); then
     node $OPENSHIFT_REPO_DIR/bin/run.js \
-         $OPENSHIFT_MONGODB_DB_URL
+         $PAINTR_MONGO_URI
 fi
