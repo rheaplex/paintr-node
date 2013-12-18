@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "paintrnode",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Paintr ported to node to run on OpenShift",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,14 +9,14 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Rob Myers",
+    "email": "rob@robmyers.org",
+    "url": "http://robmyers.org/"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://robmyers.org/paintr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": ""
   },
 
   "engines": {
@@ -25,7 +25,12 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "mongodb": "~1.3.23",
+    "node-flickr": "~0.0.1",
+    "request": "~2.30.0",
+    "tumblrwrks": "~0.2.0",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {},
   "bundleDependencies": [],
