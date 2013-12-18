@@ -25,9 +25,9 @@ https://www.openshift.com/app/account/new
 
 * Create an OpenShift node app:
 
-rhc app create APPNAME nodejs-0.10
-rhc cartridge add mongodb-2.2 -a APPNAME
-rhc cartridge add cron-1.4 -a APPNAME
+rhc app create <appname> nodejs-0.10
+rhc cartridge add mongodb-2.2 -a <appname>
+rhc cartridge add cron-1.4 -a <appname>
 
 
 * In OpenShift, install autotrace:
@@ -38,14 +38,17 @@ wget http://mirror.centos.org/centos/6/os/x86_64/Packages/autotrace-0.31.1-26.el
 rpm2cpio autotrace-0.31.1-26.el6.x86_64.rpm | cpio -idmv
 exit
 
+* Set an important evironment variable
+
+rhc env set PAINTR_MONGO_URI="<db-uri>" --app <appname>
+rhc app restart --app <appname>
+
 
 * And create a config (inserting the correct values...):
 
 ssh [your OpenShift application]
-mongo
-use paintr
+mongo <db-uri>
 db.config.insert({
-  mongo_uri:'',
   flickr_api_key: '',
   flickr_image_size: 'z',
   tumblr_consumer_key: '',
@@ -62,5 +65,3 @@ db.config.insert({
 })
 exit
 exit
-
-
