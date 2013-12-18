@@ -1,3 +1,4 @@
 #!/bin/bash
 
-node $OPENSHIFT_REPO_DIR/bin/run.js $OPENSHIFT_MONGODB_DB_URL
+node $OPENSHIFT_REPO_DIR/bin/run.js \
+     $OPENSHIFT_MONGODB_DB_HOST:$$OPENSHIFT_MONGODB_PORT/paintr
