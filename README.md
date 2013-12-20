@@ -47,7 +47,7 @@ rhc app restart --app <appname>
 * And create a config (inserting the correct values...):
 
 ssh [your OpenShift application]
-mongo <db-uri>
+mongo -u <username> -p <password> --host <host-ip> --port <port> <db-name>
 db.config.insert({
   flickr_api_key: '',
   flickr_image_size: 'z',
