@@ -30,13 +30,18 @@ rhc cartridge add mongodb-2.2 -a <appname>
 rhc cartridge add cron-1.4 -a <appname>
 
 
-* In OpenShift, install autotrace:
+* In OpenShift, install required software:
 
 ssh [your OpenShift application]
 cd $OPENSHIFT_DATA_DIR
+# We need autotrace as it's not installed
 wget http://mirror.centos.org/centos/6/os/x86_64/Packages/autotrace-0.31.1-26.el6.x86_64.rpm
 rpm2cpio autotrace-0.31.1-26.el6.x86_64.rpm | cpio -idmv
+# We need librsvg to allow ImageMagick to handle SVG
+wget ftp://ftp.muug.mb.ca/mirror/centos/6.4/os/x86_64/Packages/librsvg2-2.26.0-5.el6_1.1.0.1.centos.x86_64.rpm
+rpm2cpio librsvg2-2.26.0-5.el6_1.1.0.1.centos.x86_64.rpm | cpio -idmv
 exit
+
 
 * Set an important evironment variable
 
